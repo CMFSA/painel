@@ -78,7 +78,7 @@ class App(tk.Tk):
             self.label.configure(text="00:00")
             self.masterframe.label.configure(text="00:00")
             self.running = False            
-            playsound('alarm.wav')
+            playsound('sounds/alarm.wav')
             self.start_button.configure(state=tk.DISABLED)
             self.pause_button.configure(text="Pausar", state=tk.DISABLED)
             self.restore_button.configure(state=tk.NORMAL)
