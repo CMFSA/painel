@@ -14,8 +14,11 @@ class App(tk.Tk):
         def configureMaster(master):
             master.configure()
             master.title(titulo)
+<<<<<<< HEAD
             # photo = PhotoImage(file = "images/face.png")
             # master.iconphoto(True, photo)
+=======
+>>>>>>> 413e414dedfeea241424e9f7dc509c2bec47f45f
 
         def configurePainel(self):
             self.configure(background="black")
@@ -190,9 +193,12 @@ class App(tk.Tk):
 
 if __name__ == "__main__":
     root = tk.Tk()
+<<<<<<< HEAD
     # root.img = tk.PhotoImage(file="images/face.png")
     # root.iconphoto( False, root.img )
     # img = PhotoImage(file="images/face2.jpg")
     # root.tk.call('wm', 'iconphoto', root._w, img)
+=======
+>>>>>>> 413e414dedfeea241424e9f7dc509c2bec47f45f
     app = App(root)
     app.mainloop()
