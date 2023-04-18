@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import *
+from tkinter.ttk import *
 from playsound import playsound
 import time
 
@@ -7,16 +8,27 @@ import time
 class App(tk.Tk):
     def __init__(self, master):
         super().__init__()
+        titulo = "Câmara Municipal de Feira de Santana - Divisão de Informática"
+
+
+        def configureMaster(master):
+            master.configure()
+            master.title(titulo)
+            # photo = PhotoImage(file = "images/face.png")
+            # master.iconphoto(True, photo)
+
+        def configurePainel(self):
+            self.configure(background="black")
+            self.title(titulo)
+            self.geometry('300x200')
         
         self.masterframe = Frame(master)
         self.masterframe.pack(side = TOP)
 
         self.bottomframe = Frame(master)
         self.bottomframe.pack(side = BOTTOM)
-
-        self.title("Temporizador CMFSA")
-        master.title("Temporizador CMFSA")
-        self.geometry('300x200')
+        configureMaster(master)
+        configurePainel(self)
         self.running = False
 
         try:
@@ -30,7 +42,7 @@ class App(tk.Tk):
         self.masterframe.label = tk.Label(self.master, font=("Arial", 80), text="00:00")
         self.masterframe.label.pack(pady=20)
 
-        self.label = tk.Label(self, font=("Arial", 80), text="00:00")
+        self.label = tk.Label(self, font=("LCD", 80), text="00:00", background="black", fg='#ff9900')
         self.label.pack(pady=20)
 
         self.start_button = tk.Button(self.master, text="Iniciar", font=("Arial", 20), fg="green", command=self.start_timer)
@@ -176,15 +188,11 @@ class App(tk.Tk):
             self.time_left -= 30
             self.set_time(self.time_left, False)
 
-
 if __name__ == "__main__":
     root = tk.Tk()
-
-    # frame = Frame(root)
-    # frame.pack()
-
-    # bottomframe = Frame(root)
-    # bottomframe.pack( side = BOTTOM )
-
+    # root.img = tk.PhotoImage(file="images/face.png")
+    # root.iconphoto( False, root.img )
+    # img = PhotoImage(file="images/face2.jpg")
+    # root.tk.call('wm', 'iconphoto', root._w, img)
     app = App(root)
     app.mainloop()
